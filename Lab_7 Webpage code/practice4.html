@@ -1,0 +1,57 @@
+<!--EECS 348 Lab 7: Index Page-->
+<!--No Inputs-->
+<!--Output: A browser window which creates a multiplication table of the user's prefered size. -->
+<!--All collaborators: Owen Berkholtz-->
+<!--Author: Owen Berkholtz-->
+<!--Creation date: 10/23/24-->
+<!DOCTYPE html>
+
+<head>
+    <title>Practice 4</title>
+</head>
+<body>
+<h1>Lab 7 Practice 4</h1>
+
+<!--Creates a form that sends the user's input to the php code using the 'POST' method-->
+<form method="post">
+    Please input the size you want the table to be:
+    <input type="text" name = "get_num"><br> <!--A text box that gets the user's number-->
+    <button type = "submit">Create Table</button> <!--Button that generates the table-->
+</form>
+
+<!--Start of the php code:-->
+<?php
+
+//Checks if the user has submitted a value from the form above
+if ( ! empty($_POST['get_num'])){
+    $num = intval($_POST['get_num']); //Converts the value into an integer and assigns it to variable 'num'
+
+    echo "<h2>Multiplication Table up to $num</h2>"; //Title for the table
+    echo "<table border='1'>"; //Initalizes the table. The border is 1 pixel wide
+
+    //Creates the header for the table coloumns 
+    echo "<tr>
+    
+     <td>X</td>"; //Value for the top right header which equals no value
+    //Generate labels
+    for ($i = 1; $i <= $num; $i++) {
+        echo "<th>$i</th>"; //print the labels
+    }
+    echo "</tr>";
+
+    // Create the table rows
+    for ($i = 1; $i <= $num; $i++) {
+        echo "<tr>";
+        echo "<th>$i</th>"; //Prints the label for the rows
+        for ($j = 1; $j <= $num; $j++) {
+            echo "<td>" . ($i * $j) . "</td>"; // Prints the result of the multiplication for one cell
+        }
+        echo "</tr>";
+    }
+
+    echo "</table>";
+}
+?>
+</body>
+</html>
+
