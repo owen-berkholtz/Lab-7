@@ -1,0 +1,83 @@
+<!--EECS 348 Lab 7: Practice 1-->
+<!--No Inputs-->
+<!--Output: A browser window that shows a personal description of Owen Berkholtz.-->
+<!--All collaborators: Owen Berkholtz-->
+<!--Author: Owen Berkholtz-->
+<!--Creation date: 10/23/24-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /*Sets the background image for the page*/
+        body{
+            background-image: url("minimalist-nature-wyzyvbxuw60tpzrx.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        /*Style for the name title*/
+        h1 {
+            font-family:cursive;
+            color: red;
+            font-size: 40px;
+        /*Sets the position of the video to the top right*/
+        }
+        #video{
+            position:absolute;
+            top: 0px;
+            right: 10px;
+        }
+        /*Sets style for the about me title*/
+        h2{
+            color: red; 
+            font-family: cursive;
+        }
+        /*Sets the style for the video header*/
+        h3{
+            color: red; 
+            font-family: cursive;
+        }
+
+    </style>
+    <title>Practice 1</title>
+</head>
+
+<body>
+
+    <h1>Owen Berkholtz</h1><!--Name header-->
+    <img src="1708823636279.jfif" height="200px" width="200px"><br> <!--Insert a headshot picture-->
+    <p style="border: 2px solid;padding: 5px; display: inline-block;"> <!--Contact info display-->
+        Email: owen.berkholtz@ku.edu  <br>
+        Cell Phone: 612-505-2401
+
+    </p>
+
+    <h2>About Me:</h2><!--About me header-->
+    <!--About me paragraph-->
+    <p style="font-size: 20px;">
+
+        Hi my name is Owen Berkholtz!<br>
+        I'm a Computer Science student at the University of Kansas.<br>
+        Right now, I want to become a cybersecuity analyst.<br>
+        So I spend time working on CompTIA's Security+ certrificate <br>
+        as well as getting involved in KU's Information Security Club.<br>
+        Check out my Linkedin for more info:<br>
+
+        <a href="https://www.linkedin.com/in/owen-berkholtz-997578296/">Owen's Linkedin</a><br><br> <!--Link to Linkdin-->
+        In my spare time I like to: run, fish, and watch cheesy horror films.<br>
+
+    </p>
+    <!--Inserts a video into the webpage-->
+    <div id = "video">
+        <br><h3>Check Out This Cool Video I Found!</h3> <!--Video header-->
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/lAIGb1lfpBw?si=1DCeyosxw4Oix9mn" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+    </div>
+
+</body>
+</html>
