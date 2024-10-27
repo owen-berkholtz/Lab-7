@@ -1,0 +1,87 @@
+<!--EECS 348 Lab 7: Index Page-->
+<!--No Inputs-->
+<!--Output: A browser window which allows the user to change the style 
+    of a text paragraph's border color and width, as the background color-->
+<!--All collaborators: Owen Berkholtz-->
+<!--Author: Owen Berkholtz-->
+<!--Creation date: 10/23/24-->
+<!DOCTYPE html>
+
+<head>
+    <title>Practice 2</title>
+    <style>
+        /*Sets the style of the border*/
+        #Paragraph {
+            border: 5px solid rgb(0, 0, 0); /*Create border*/
+            background: rgb(255, 255, 255); /*Create the background color*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab 7 Practice 2</h1> <!--Title of the webpage-->
+    <!--The beginning of the paragraph-->
+    <div id="Paragraph">Text to be altered.</div>
+
+
+    <!--The text input for border color-->
+    Change Border Color Red (0-255):
+    <input type="text" id="border_red"><br> <!--Red-->
+
+    Change Border Color Green (0-255):
+    <input type="text" id="border_green"><br> <!--Green-->
+
+    Change Border Color Blue (0-255):
+    <input type="text" id="border_blue"><br><br> <!--Blue-->
+
+    <!--The input for border width-->
+    Change Border Width (in pixels):
+    <input type="text" id="width"><br><br>
+
+    <!--The  text input for background color-->
+    Change Background Color Red (0-255):
+    <input type="text" id="back_red"><br> <!--Red-->
+
+    Change Background Color Green (0-255):
+    <input type="text" id="back_green"><br> <!--Green-->
+
+    Change Background Color Blue (0-255):
+    <input type="text" id="back_blue"><br> <!--Blue-->
+
+
+    <!--Button that changes the paragraph-->
+    <button id="button" onclick="changeParagraph()">Change Paragraph!</button>
+
+
+    <!--Beginning of javascript-->
+    <script>
+        /*
+        Function gets the values from the text boxes above and alters the paragraph accordingly
+
+        Input: None, the function is also called when the button is clicked
+        Output: The changed paragraph, returns nothing
+        
+        */
+        function changeParagraph() {
+            let para = document.getElementById("Paragraph"); //Get the paragraph by its id
+
+            //Get the values of all the text boxes
+            let borderRed = document.getElementById("border_red").value; //The border's red value
+            let borderGreen = document.getElementById("border_green").value;//The border's green value
+            let borderBlue = document.getElementById("border_blue").value;//The border's blue value
+
+            let borderWidth = document.getElementById("width").value; //The border width
+
+
+            let backRed = document.getElementById("back_red").value; //The border's red value
+            let backGreen = document.getElementById("back_green").value;//The border's green value
+            let backBlue = document.getElementById("back_blue").value;//The border's blue value
+
+            para.style.borderColor = `rgb(${borderRed}, ${borderGreen}, ${borderBlue})`; //Set the border color
+            
+            para.style.borderWidth = `${borderWidth}px`; //Set the border width
+
+            para.style.background = `rgb(${backRed}, ${backGreen}, ${backBlue})`; //Set the background color
+        }
+    </script>
+</body>
+</html>
