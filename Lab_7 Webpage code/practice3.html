@@ -1,0 +1,45 @@
+<!--EECS 348 Lab 7: Index Page-->
+<!--No Inputs-->
+<!--Output: A browser window which lets the user input 2 passwords and it checks if they are valid-->
+<!--All collaborators: Owen Berkholtz-->
+<!--Author: Owen Berkholtz-->
+<!--Creation date: 10/23/24-->
+<!DOCTYPE html>
+
+<head>
+    <title>Practice 3</title>
+</head>
+
+<body>
+    <h1>Lab 7 Practice 3</h1> <!--Main title for the webpage-->
+
+    Enter Password: <input type ="text" id = 'pass1'><br> <!--Input for the first password-->
+
+    Re-Enter Password: <input type ="text" id = 'pass2'><br><!--Input for the second password-->
+
+    <button onclick="check_password()">Check Password</button> <!--The button you click to check if the passwords are equal-->
+
+</body>
+
+<!--Beginning of the javascsript-->
+<script>
+    function check_password(){
+        //Get the values of the passwords
+        let password1 = document.getElementById("pass1").value;
+        let password2 = document.getElementById("pass2").value;
+
+        //Check if the passwords are not equal
+        if ((password1 !== password2)){
+            alert("PASSWORDS DO NOT MATCH!"); //Tell the user if they do not match
+            return;
+        }
+        //Check if the passwords are both more than 8 characters
+        if (((password1.length < 8) || (password2.length < 8))){
+            alert("PASSWORDS MUST BE AT LEAST 8 CHARACTERS!"); //Tell the user then passwords are not long enough
+            return;
+        }
+        alert("PASSWORDS ARE VALID!"); //If the previous 2 conditions are false, then tell the user the passwords are valid
+        return;
+
+    }
+</script>
